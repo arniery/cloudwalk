@@ -3,6 +3,8 @@
 ### Task
 The task of this challenge was to build a lightweight prototype that listens to spoken digits (0–9) and predicts the correct number using the Free Spoken Digit Dataset as the source of .wav files. The assistance of Gemini was used in debugging this project, and ChatGPT was also used for a couple of personal Python questions, but the main ideas of CNN architecture and wav -> spectrogram conversion were inspired by the sources linked below.
 
+Simply clone and run the fsdd_digit_classifier.py script to train and the test1.py script to see it work on a real .wav file example!
+
 ### Dataset
 
 The dataset used was the [FSDD](https://github.com/Jakobovski/free-spoken-digit-dataset#), an audio version of MNIST and published for cloning on GitHub by user Jakobovski. The folder "recordings" was specifically pulled from this repository for my training purposes.
@@ -24,7 +26,7 @@ Done. Best val acc: 0.8316666666666667
 I also ran a separate test file on a few individual wav files from the test set, and they gave a correct result every time.
 
 ### Bonus: Microphone inference
-
+In attempting the bonus part of this challenge, I used sounddevice to record my computer's audio, trim the extra silence outside of voice activity, and normalise the audio before running the function predict_from_waveform to apply the model logic to this new .wav file we've just generated. Admittedly, did not succeed too well, but you guys can try it out and see if it works with your computer's or better quality microphones. In the very last main block, un-comment the last two lines and run to try this feature.
 
 ## Sources
 - https://github.com/braydenoneal/neural-audio-classification/blob/master/README.md
@@ -32,3 +34,4 @@ I also ran a separate test file on a few individual wav files from the test set,
 - https://www.youtube.com/watch?v=dVfmTB8twkg&t=5s
 - https://github.com/Armita84/spoken-digits-classification
 - https://docs.pytorch.org/docs/stable/nn.html
+- https://python-sounddevice.readthedocs.io/en/0.5.1/
